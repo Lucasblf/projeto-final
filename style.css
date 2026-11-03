@@ -206,3 +206,48 @@ body {
     height: 1px;
     background: #7a98ff;
 }
+ /* 1. O bloco limita o espaço e serve de base para o texto flutuar */
+ .container_2 {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Ajuste para o tamanho real que deseja na tela */
+    margin: 0 auto;
+ }
+
+ /* Garante que a imagem preencha o bloco corretamente */
+ .imagem-professor {
+    width: 100%;
+    height: auto;
+    display: block;
+ }
+
+ /* 2. A faxixa azul ganha uma posição de flutuar em cima da imagem */
+ .faixa-azul {
+    position:absolute; /* Desprende o elementto para fazer ele flutuar em cima da imagem */
+    bottom: 0; /*Cola a faixa  exatamente na base da foto*/
+    left: 0; /* Alinha na borda esquerda da foto */
+    width: 100%; /* Ocupa toda a largura da foto */
+
+    /* A a cor azul escura com transparência */
+
+    background-color: #061a3f;
+
+    padding: 20px; /* da um espaço interno para o texto respirar*/
+    box-sizing: border-box; /* Garante que o padding não quebra a largura */
+    
+ }
+
+ /* Formatação simples dos textos internos */
+ .faixa-azul h3 {
+    color:#ffffff;
+    font-size: 18px;
+    margin: 0 0 4 px 0;
+    font-weight: bold;
+ }
+  
+ .faixa-azul p {
+    color:#b0c4de;
+    font-size: 10px;
+    margin: 0;
+    text-transform: uppercase;
+ }
