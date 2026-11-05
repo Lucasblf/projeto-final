@@ -478,6 +478,38 @@ body {
     transform: translate(3px, -3px);
 }
 
+/* --- DESTAQUES --- */
+
+.titulo-destaques {
+    margin: 56px 0 28px;
+}
+
+/* Card horizontal: foto vertical à esquerda e texto à direita */
+.card-destaque {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    align-items: center;
+}
+
+/* A foto é vertical: 4 / 5 mostra o rosto e a medalha, sem o corte largo dos outros cards */
+.card-destaque .card-imagem {
+    aspect-ratio: 4 / 5;
+}
+
+.card-destaque .card-imagem img {
+    object-position: top;
+}
+
+.card-destaque .card-texto {
+    min-height: 0;
+    padding: 24px 40px;
+}
+
+.card-destaque .card-descricao {
+    max-width: 520px;
+    font-size: 15px;
+}
+
 /* --- SEÇÃO PATROCINADORES --- */
 
 /* Duas colunas: título à esquerda e faixa animada à direita */
@@ -648,45 +680,61 @@ body {
     padding: 32px 0;
 }
 
-.rodape-conteudo {
+/* --- CRÉDITOS NO RODAPÉ --- */
+
+/* Link do Instagram: ícone ao lado do @ */
+.link-instagram {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.link-instagram:hover {
+    text-decoration: underline;
+}
+
+.link-instagram img {
+    width: 22px;
+    height: 22px;
+}
+
+/* Logo da Fatec à esquerda e créditos ao lado */
+.rodape-credito {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 24px;
 }
 
-.rodape-marca {
+/* A logo da Fatec é escura, então recebe um fundo branco para aparecer no azul */
+.fatec-fundo {
+    flex-shrink: 0;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background: #ffffff;
+}
+
+.fatec-fundo img {
+    display: block;
+    width: 110px;
+    height: auto;
+}
+
+.credito-texto p {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #c8d6f5;
+    margin-bottom: 12px;
+}
+
+/* flex-wrap: os @ descem de linha quando falta espaço */
+.credito-integrantes {
     display: flex;
-    align-items: center;
-    gap: 13px;
-}
-
-.rodape-marca img {
-    width: 49px;
-    height: 49px;
-    object-fit: contain;
-}
-
-.rodape-marca div {
-    display: flex;
-    flex-direction: column;
-}
-
-.rodape-marca strong {
-    font-size: 16px;
-    letter-spacing: 1px;
-}
-
-.rodape-marca span {
-    font-size: 10px;
-    color: #9eb4e8;
-}
-
-.rodape-info {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    color: #a9bde9;
+    flex-wrap: wrap;
+    gap: 10px 24px;
 }
 
 /* --- LINKS DOS CARDS DE NOVIDADES --- */
@@ -786,6 +834,15 @@ a.card-imagem {
     border-radius: 4px;
 }
 
+/* --- MENU HAMBÚRGUER --- */
+
+/* Fora do celular, nada do menu hambúrguer aparece */
+.menu-check,
+.menu-botao,
+.menu-celular {
+    display: none;
+}
+
 /* --- ACESSIBILIDADE --- */
 
 /* Para quem configurou o sistema com menos movimento: para a faixa e permite rolar para o lado */
@@ -812,36 +869,113 @@ a.card-imagem {
         scroll-padding-top: 0;
     }
 
+    /* No celular, a navegação fica no menu hambúrguer */
     .header {
-        position: static;
-        height: auto;
-        flex-direction: column;
-        gap: 12px;
-        padding: 12px 18px 14px;
+        display: none;
     }
 
-    .sub-items {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px 16px;
-    }
-
-    .sub-items a {
-        font-size: 10px;
-    }
-
-    /* Área de toque maior no botão */
-    .sub-items a.button {
-        padding: 10px 14px;
-    }
-
+    /* O azul acaba junto com o texto: sem altura mínima e sem o rodapé decorativo */
     .container,
     .hero-content {
-        min-height: 620px;
+        min-height: 0;
     }
 
     .hero-content {
-        padding-top: 56px;
+        padding: 28px 20px 36px;
+    }
+
+    .hero-rodape {
+        display: none;
+    }
+
+    /* Texto à esquerda e botão à direita; a lista aberta ocupa a linha inteira */
+    .topo-menu {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .topo-menu .localizacao,
+    .topo-menu .botao-voltar {
+        margin-bottom: 0;
+    }
+
+    /* Mantém o checkbox acessível pelo teclado, mas invisível */
+    .menu-check {
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+    }
+
+    /* Área de toque de 44px, com as três barras dentro */
+    .menu-botao {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .menu-botao span {
+        display: block;
+        height: 2px;
+        background: #ffffff;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    /* Contorno quando o botão é alcançado pelo teclado */
+    .menu-check:focus-visible + .menu-botao {
+        outline: 2px solid #ffffff;
+    }
+
+    /* Menu aberto: as barras viram um X */
+    .menu-check:checked + .menu-botao span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-check:checked + .menu-botao span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-check:checked + .menu-botao span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* O seletor ~ procura um irmão depois do checkbox e mostra a lista */
+    .menu-check:checked ~ .menu-celular {
+        display: block;
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    .menu-celular ul {
+        list-style: none;
+    }
+
+    .menu-celular a:not(.button) {
+        display: block;
+        padding: 14px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .menu-celular .button {
+        display: block;
+        margin-top: 8px;
+        border: 1px solid #ffffff; /* destaca o botão sobre o fundo azul */
+        text-align: center;
+        font-size: 13px;
     }
 
     /* clamp: o título acompanha a largura da tela, entre 44px e 64px */
@@ -919,6 +1053,19 @@ a.card-imagem {
         font-size: 14px;
     }
 
+    /* Foto em cima e texto embaixo */
+    .card-destaque {
+        grid-template-columns: 1fr;
+    }
+
+    .card-destaque .card-texto {
+        padding: 24px;
+    }
+
+    .titulo-destaques {
+        margin-top: 40px;
+    }
+
     /* Título acima da faixa */
     .secao-apoiadores {
         display: block;
@@ -946,8 +1093,15 @@ a.card-imagem {
         align-items: flex-start;
     }
 
-    .rodape-conteudo {
-        flex-wrap: wrap;
+    /* Logo da Fatec em cima e créditos embaixo */
+    .rodape-credito {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .credito-texto p,
+    .link-instagram {
+        font-size: 14px;
     }
 
     .pagina-banner h1 {
@@ -961,10 +1115,5 @@ a.card-imagem {
     /* Uma foto por linha no celular */
     .galeria {
         grid-template-columns: 1fr;
-    }
-
-    .rodape-marca span,
-    .rodape-info {
-        font-size: 11px;
     }
 }

@@ -41,9 +41,27 @@
     <!-- inicio seção principal -->
     <section class="container" id="inicio">
       <div class="hero-content">
-        <p class="localizacao">SÃO JOSÉ DO RIO PRETO · SP</p>
+        <div class="topo-menu">
+          <p class="localizacao">SÃO JOSÉ DO RIO PRETO · SP</p>
+          <!-- Menu do celular: o checkbox guarda o estado aberto/fechado e o CSS mostra a lista -->
+          <input class="menu-check" type="checkbox" id="menu-abrir" aria-label="Abrir menu" />
+          <label class="menu-botao" for="menu-abrir">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <nav class="menu-celular" aria-label="Menu principal">
+            <ul>
+              <li><a href="#projeto">PROJETO</a></li>
+              <li><a href="#novidades">NOVIDADES</a></li>
+              <li><a href="#patrocinadores">APOIADORES</a></li>
+              <li><a href="#mapa">LOCALIZAÇÃO</a></li>
+              <li><a href="#inscricao" class="button">INSCRIÇÃO</a></li>
+            </ul>
+          </nav>
+        </div>
 
-        <h1>MOVIMENTO QUE<br /><span class="destaque-claro">TRANSFORMA.</span></h1>
+        <h1>MOVIMENTO QUE<br /><span class="destaque-claro">TRANSFORMA</span></h1>
 
         <p class="descricao">
           Atletismo para crianças, adolescentes e atletas de alto rendimento.
@@ -76,7 +94,7 @@
         <!-- Coluna da Direita: Textos explicativos e detalhes -->
         <div class="professor-conteudo">
           <p class="subtitulo-iniciacao">PROJETO DE INICIAÇÃO</p>
-          <h2>O PRIMEIRO PASSO <span class="destaque">COMEÇA AQUI.</span></h2>
+          <h2>O PRIMEIRO PASSO <span class="destaque">COMEÇA AQUI</span></h2>
           <p class="texto-principal">
             O projeto da ARPA-RP abre as portas do atletismo para crianças a partir de 6 anos e adolescentes. Com aulas lúdicas, acompanhamento próximo e muita energia, cada treino transforma movimento em confiança.
           </p>
@@ -155,6 +173,22 @@
             </div>
           </article>
         </div>
+
+        <!-- Destaques: card com foto ao lado do texto -->
+        <h2 class="titulo-secao titulo-destaques">DESTAQUES</h2>
+        <article class="card-novidade card-destaque">
+          <div class="card-imagem">
+            <img src="img/jeovany_bronze_1500.png" alt="Jeovane da Rocha mostrando a medalha de bronze, com a camiseta da ARPA-RP" loading="lazy" />
+          </div>
+          <div class="card-texto">
+            <p class="card-etiqueta">12 DE OUTUBRO</p>
+            <h3>Bronze nos 1.500m!</h3>
+            <p class="card-descricao">
+              Jeovane da Rocha conquistou a medalha de bronze nos 1.500 metros
+              masculino no dia 12 de outubro, nos Jogos Abertos do Interior!
+            </p>
+          </div>
+        </article>
       </div>
     </section>
     <!-- fim seção novidades -->
@@ -231,16 +265,31 @@
 
     <!-- inicio rodapé -->
     <footer class="rodape">
-      <div class="conteudo-central rodape-conteudo">
-        <div class="rodape-marca">
-          <img src="img/logo_sem_fundo.webp" alt="Logo ARPA-RP" loading="lazy" />
-          <div>
-            <strong>ARPA-RP</strong>
-            <span>Associação Riopretense Pró Atletismo</span>
+      <!-- Créditos do projeto acadêmico -->
+      <div class="conteudo-central rodape-credito">
+        <span class="fatec-fundo">
+          <img src="img/fateclogo.webp" alt="Logo da Fatec Rio Preto" loading="lazy" />
+        </span>
+        <div class="credito-texto">
+          <p>
+            Site desenvolvido pelos alunos da Fatec Rio Preto, 1º período de
+            Informática para Negócios, São José do Rio Preto.
+          </p>
+          <div class="credito-integrantes">
+            <a class="link-instagram" href="https://www.instagram.com/lucasblf_/" target="_blank" rel="noopener">
+              <img src="img/instagram.png" alt="" loading="lazy" />
+              @lucasblf_
+            </a>
+            <a class="link-instagram" href="https://www.instagram.com/lauracarvalho.v/" target="_blank" rel="noopener">
+              <img src="img/instagram.png" alt="" loading="lazy" />
+              @lauracarvalho.v
+            </a>
+            <a class="link-instagram" href="https://www.instagram.com/luispereirathiago/" target="_blank" rel="noopener">
+              <img src="img/instagram.png" alt="" loading="lazy" />
+              @luispereirathiago
+            </a>
           </div>
         </div>
-        <p class="rodape-info">DESDE 1971</p>
-        <p class="rodape-info">© ARPA-RP</p>
       </div>
     </footer>
     <!-- fim rodapé -->

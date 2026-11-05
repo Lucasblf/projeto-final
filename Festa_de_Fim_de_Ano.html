@@ -34,7 +34,25 @@
     <!-- inicio banner da página -->
     <section class="pagina-banner">
       <div class="conteudo-central">
-        <a class="botao-voltar" href="index.html">← VOLTAR PARA A PÁGINA INICIAL</a>
+        <div class="topo-menu">
+          <a class="botao-voltar" href="index.html">← VOLTAR PARA A PÁGINA INICIAL</a>
+          <!-- Menu do celular: o checkbox guarda o estado aberto/fechado e o CSS mostra a lista -->
+          <input class="menu-check" type="checkbox" id="menu-abrir" aria-label="Abrir menu" />
+          <label class="menu-botao" for="menu-abrir">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <nav class="menu-celular" aria-label="Menu principal">
+            <ul>
+              <li><a href="index.html#projeto">PROJETO</a></li>
+              <li><a href="index.html#novidades">NOVIDADES</a></li>
+              <li><a href="index.html#patrocinadores">APOIADORES</a></li>
+              <li><a href="index.html#mapa">LOCALIZAÇÃO</a></li>
+              <li><a href="index.html#inscricao" class="button">INSCRIÇÃO</a></li>
+            </ul>
+          </nav>
+        </div>
         <p class="subtitulo-secao subtitulo-claro">COMUNIDADE ARPA-RP</p>
         <h1>Festa de fim de ano</h1>
         <p class="pagina-descricao">Encerramos mais uma temporada com gratidão, integração e muita celebração junto das famílias.</p>
@@ -76,16 +94,31 @@
 
     <!-- inicio rodapé -->
     <footer class="rodape">
-      <div class="conteudo-central rodape-conteudo">
-        <div class="rodape-marca">
-          <img src="img/logo_sem_fundo.webp" alt="Logo ARPA-RP" loading="lazy" />
-          <div>
-            <strong>ARPA-RP</strong>
-            <span>Associação Riopretense Pró Atletismo</span>
+      <!-- Créditos do projeto acadêmico -->
+      <div class="conteudo-central rodape-credito">
+        <span class="fatec-fundo">
+          <img src="img/fateclogo.webp" alt="Logo da Fatec Rio Preto" loading="lazy" />
+        </span>
+        <div class="credito-texto">
+          <p>
+            Site desenvolvido pelos alunos da Fatec Rio Preto, 1º período de
+            Informática para Negócios, São José do Rio Preto.
+          </p>
+          <div class="credito-integrantes">
+            <a class="link-instagram" href="https://www.instagram.com/lucasblf_/" target="_blank" rel="noopener">
+              <img src="img/instagram.png" alt="" loading="lazy" />
+              @lucasblf_
+            </a>
+            <a class="link-instagram" href="https://www.instagram.com/lauracarvalho.v/" target="_blank" rel="noopener">
+              <img src="img/instagram.png" alt="" loading="lazy" />
+              @lauracarvalho.v
+            </a>
+            <a class="link-instagram" href="https://www.instagram.com/luispereirathiago/" target="_blank" rel="noopener">
+              <img src="img/instagram.png" alt="" loading="lazy" />
+              @luispereirathiago
+            </a>
           </div>
         </div>
-        <p class="rodape-info">DESDE 1971</p>
-        <p class="rodape-info">© ARPA-RP</p>
       </div>
     </footer>
     <!-- fim rodapé -->
