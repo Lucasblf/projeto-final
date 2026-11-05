@@ -206,48 +206,123 @@ body {
     height: 1px;
     background: #7a98ff;
 }
- /* 1. O bloco limita o espaço e serve de base para o texto flutuar */
- .container_2 {
+/* --- SEGUNDA SEÇÃO: PROFESSORES --- */
+
+.secao-professor {
+    width: 100%;
+    background: #ffffff;
+    padding: 80px 20px;
+}
+
+/* Container que centraliza e coloca a foto e o texto lado a lado */
+.professor-wrapper {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+/* Lado esquerdo: Container da imagem e faixa */
+.container-professor {
     position: relative;
     width: 100%;
-    max-width: 600px; /* Ajuste para o tamanho real que deseja na tela */
-    margin: 0 auto;
- }
+    max-width: 450px;
+    border-radius: 4px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
 
- /* Garante que a imagem preencha o bloco corretamente */
- .imagem-professor {
+/* Imagem dos professores */
+.imagem-professor {
     width: 100%;
     height: auto;
     display: block;
- }
+    object-fit: cover;
+}
 
- /* 2. A faxixa azul ganha uma posição de flutuar em cima da imagem */
- .faixa-azul {
-    position:absolute; /* Desprende o elementto para fazer ele flutuar em cima da imagem */
-    bottom: 0; /*Cola a faixa  exatamente na base da foto*/
-    left: 0; /* Alinha na borda esquerda da foto */
-    width: 100%; /* Ocupa toda a largura da foto */
+/* Faixa azul flutuante sobre a imagem */
+.faixa-azul {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(6, 26, 63, 0.95);
+    padding: 22px 24px;
+    box-sizing: border-box;
+}
 
-    /* A a cor azul escura com transparência */
-
-    background-color: #061a3f;
-
-    padding: 20px; /* da um espaço interno para o texto respirar*/
-    box-sizing: border-box; /* Garante que o padding não quebra a largura */
-    
- }
-
- /* Formatação simples dos textos internos */
- .faixa-azul h3 {
-    color:#ffffff;
+.faixa-azul h3 {
+    color: #ffffff;
     font-size: 18px;
-    margin: 0 0 4 px 0;
-    font-weight: bold;
- }
-  
- .faixa-azul p {
-    color:#b0c4de;
+    margin: 0 0 4px 0;
+    font-weight: 700;
+}
+
+.faixa-azul p {
+    color: #b0c4de;
     font-size: 10px;
     margin: 0;
+    font-weight: 700;
+    letter-spacing: 1px;
     text-transform: uppercase;
- }
+}
+
+/* Lado direito: Textos descritivos */
+.professor-conteudo {
+    display: flex;
+    flex-direction: column;
+}
+
+.subtitulo-iniciacao {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #1a3ad6;
+    margin-bottom: 16px;
+}
+
+.professor-conteudo h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 0.95;
+    color: #081a5e;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.texto-principal, .texto-secundario {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #555f79;
+    margin-bottom: 18px;
+}
+
+/* Grid de informações na parte inferior (Gratuito, Dias, Horário, Idade) */
+.info-grid {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+    border-top: 1px solid #eaeef5;
+    padding-top: 24px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.info-valor {
+    font-size: 13px;
+    font-weight: 700;
+    color: #081a5e;
+}
+
+.info-rotulo {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #8c98b2;
+}
