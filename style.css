@@ -689,6 +689,103 @@ body {
     color: #a9bde9;
 }
 
+/* --- LINKS DOS CARDS DE NOVIDADES --- */
+
+/* O link do título herda a cor do h3, sem sublinhado */
+.card-texto h3 a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.card-texto h3 a:hover {
+    color: #1a3ad6;
+}
+
+/* A foto do card agora é um link, e <a> precisa de display: block para respeitar a proporção */
+a.card-imagem {
+    display: block;
+}
+
+/* --- PÁGINAS DE NOVIDADES --- */
+
+/* Banner azul no topo de cada página */
+.pagina-banner {
+    background: radial-gradient(circle at 85% 50%, #0d2987 0%, #081a5e 50%, #05103a 100%);
+    color: #ffffff;
+    padding: 48px 0 56px;
+}
+
+.pagina-banner h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.pagina-descricao {
+    max-width: 520px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #d1deff;
+}
+
+/* Botão de voltar: claro sobre o banner azul */
+.botao-voltar {
+    display: inline-block;
+    margin-bottom: 36px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.botao-voltar:hover {
+    text-decoration: underline;
+}
+
+/* Versão azul do botão, usada sobre o fundo branco */
+.botao-voltar-escuro {
+    margin: 40px 0 0;
+    color: #1a3ad6;
+}
+
+.pagina-galeria {
+    background: #ffffff;
+    padding: 64px 0;
+}
+
+/* Texto do evento: largura limitada para facilitar a leitura */
+.pagina-texto {
+    max-width: 760px;
+    margin-top: 48px;
+}
+
+.pagina-texto p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555f79;
+    margin-bottom: 18px;
+}
+
+/* Grid de fotos: três por linha. Basta adicionar outra <img> no HTML */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.galeria img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    display: block;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
 /* --- ACESSIBILIDADE --- */
 
 /* Para quem configurou o sistema com menos movimento: para a faixa e permite rolar para o lado */
@@ -851,6 +948,19 @@ body {
 
     .rodape-conteudo {
         flex-wrap: wrap;
+    }
+
+    .pagina-banner h1 {
+        font-size: 48px;
+    }
+
+    .pagina-galeria {
+        padding: 40px 0;
+    }
+
+    /* Uma foto por linha no celular */
+    .galeria {
+        grid-template-columns: 1fr;
     }
 
     .rodape-marca span,
