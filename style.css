@@ -510,6 +510,69 @@ body {
     font-size: 15px;
 }
 
+/* --- SEÇÃO DIRETORIA --- */
+
+.secao-diretoria {
+    background: #ffffff;
+    padding: 80px 0 20px;
+}
+
+.nota-carrossel {
+    font-size: 12px;
+    color: #687b9f;
+    margin: 14px 0 28px;
+}
+
+/* Carrossel: os cards ficam em linha e a lista rola para o lado */
+.carrossel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* faz cada card parar alinhado ao rolar */
+    padding-bottom: 16px;
+    scrollbar-width: thin;
+    scrollbar-color: #1a3ad6 #eaf0fb;
+}
+
+/* Cada card tem largura fixa e não encolhe, por isso a lista passa da tela */
+.membro {
+    flex: 0 0 260px;
+    scroll-snap-align: start;
+    background: #eaf0fb;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Foto em formato retrato, mostrando o rosto */
+.membro img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: top;
+}
+
+.membro-texto {
+    padding: 16px 18px 20px;
+}
+
+.membro-texto h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #081a5e;
+    margin-bottom: 6px;
+}
+
+.membro-texto p {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #1a3ad6;
+}
+
 /* --- SEÇÃO PATROCINADORES --- */
 
 /* Duas colunas: título à esquerda e faixa animada à direita */
@@ -1064,6 +1127,15 @@ a.card-imagem {
 
     .titulo-destaques {
         margin-top: 40px;
+    }
+
+    .secao-diretoria {
+        padding: 56px 0 10px;
+    }
+
+    /* No celular, cada card ocupa boa parte da tela e o próximo aparece pela metade */
+    .membro {
+        flex-basis: 72%;
     }
 
     /* Título acima da faixa */
