@@ -325,6 +325,20 @@ body {
     padding-top: 24px;
 }
 
+/* Título de cada rodapé ocupa a linha inteira */
+.info-titulo {
+    width: 100%;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #1a3ad6;
+}
+
+/* O segundo rodapé fica mais perto do primeiro */
+.info-grid-elite {
+    margin-top: 0;
+}
+
 .info-item {
     display: flex;
     flex-direction: column;
@@ -487,8 +501,9 @@ body {
 /* Card horizontal: foto vertical à esquerda e texto à direita */
 .card-destaque {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 200px 1fr;
     align-items: center;
+    max-width: 760px; /* o card não ocupa a tela inteira */
 }
 
 /* A foto é vertical: 4 / 5 mostra o rosto e a medalha, sem o corte largo dos outros cards */
@@ -1075,6 +1090,10 @@ a.card-imagem {
     }
 
     /* Informações em duas colunas */
+    .info-titulo {
+        grid-column: 1 / -1;
+    }
+
     .info-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -1116,13 +1135,21 @@ a.card-imagem {
         font-size: 14px;
     }
 
-    /* Foto em cima e texto embaixo */
+    /* No celular a foto continua ao lado do texto, só que menor */
     .card-destaque {
-        grid-template-columns: 1fr;
+        grid-template-columns: 110px 1fr;
     }
 
     .card-destaque .card-texto {
-        padding: 24px;
+        padding: 14px 16px;
+    }
+
+    .card-destaque .card-texto h3 {
+        font-size: 22px;
+    }
+
+    .card-destaque .card-descricao {
+        font-size: 13px;
     }
 
     .titulo-destaques {
