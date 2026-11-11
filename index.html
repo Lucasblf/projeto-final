@@ -67,12 +67,6 @@
           Atletismo para crianças, adolescentes e atletas de alto rendimento.
           Uma história de dedicação ao esporte que começou em 1971.
         </p>
-
-        <div class="hero-rodape">
-          <span>01</span>
-          <span class="linha"></span>
-          <span>ARPA-RP</span>
-        </div>
       </div>
     </section>
     <!-- fim seção principal -->
@@ -134,7 +128,7 @@
               <span class="info-rotulo">HORÁRIO</span>
             </div>
             <div class="info-item">
-              <span class="info-valor">A partir de 12 anos</span>
+              <span class="info-valor">A partir de 14 anos</span>
               <span class="info-rotulo">IDADE</span>
             </div>
           </div>
@@ -161,7 +155,7 @@
               <img src="img/brinquedo.webp" alt="Crianças brincando em um tobogã inflável na pista de atletismo" loading="lazy" />
             </a>
             <div class="card-texto">
-              <p class="card-etiqueta">12 DE OUTUBRO</p>
+              <p class="card-etiqueta">23 DE OUTUBRO</p>
               <h3><a href="Festa_do_Dia_das_Criancas.html">Festa do Dia das Crianças</a></h3>
               <p class="card-descricao">Um dia especial para celebrar a alegria, a amizade e cada pequena grande conquista dos nossos atletas.</p>
               <a class="card-seta" href="Festa_do_Dia_das_Criancas.html" aria-label="Ver a página Festa do Dia das Crianças">↗</a>
@@ -215,45 +209,81 @@
       <div class="conteudo-central">
         <p class="subtitulo-secao">QUEM FAZ ACONTECER</p>
         <h2 class="titulo-secao">DIRETORIA <span class="destaque">E EQUIPE</span></h2>
-        <p class="nota-carrossel">Arraste para o lado para ver todos →</p>
+       
 
-        <!-- Carrossel só com CSS: a lista rola na horizontal e cada card "encaixa" no lugar (scroll-snap) -->
-        <div class="carrossel">
-          <article class="membro">
-            <img src="img/diretoria_treinador_peter.webp" alt="Peter Camargo, treinador da ARPA-RP" loading="lazy" />
-            <div class="membro-texto">
-              <h3>Peter Camargo</h3>
-              <p>TREINADOR</p>
+        <!-- Carrossel só com CSS: cada "radio" guarda qual item está aparecendo e as setas são labels que marcam o radio anterior ou o próximo -->
+        <div class="carrossel-setas carrossel-diretoria">
+          <input class="slide-radio" type="radio" name="diretoria" id="diretoria-1" checked aria-label="Mostrar item 1 de 5" />
+          <input class="slide-radio" type="radio" name="diretoria" id="diretoria-2" aria-label="Mostrar item 2 de 5" />
+          <input class="slide-radio" type="radio" name="diretoria" id="diretoria-3" aria-label="Mostrar item 3 de 5" />
+          <input class="slide-radio" type="radio" name="diretoria" id="diretoria-4" aria-label="Mostrar item 4 de 5" />
+          <input class="slide-radio" type="radio" name="diretoria" id="diretoria-5" aria-label="Mostrar item 5 de 5" />
+          <div class="slides-janela">
+            <div class="slides-trilho">
+              <div class="slide">
+                <article class="membro">
+                <img src="img/diretoria_treinador_peter.webp" alt="Peter Camargo, treinador da ARPA-RP" loading="lazy" />
+                <div class="membro-texto">
+                  <h3>Peter Camargo</h3>
+                  <p>COORDENADOR E TREINADOR</p>
+                </div>
+                </article>
+                <label class="seta seta-esq" for="diretoria-5" aria-label="Anterior">&#8249;</label>
+                <label class="seta seta-dir" for="diretoria-2" aria-label="Próximo">&#8250;</label>
+              </div>
+              <div class="slide">
+                <article class="membro">
+                <img src="img/diretoria_diretor_cleber.webp" alt="Cleber, diretor da ARPA-RP" loading="lazy" />
+                <div class="membro-texto">
+                  <h3>Cleber</h3>
+                  <p>DIRETOR</p>
+                </div>
+                </article>
+                <label class="seta seta-esq" for="diretoria-1" aria-label="Anterior">&#8249;</label>
+                <label class="seta seta-dir" for="diretoria-3" aria-label="Próximo">&#8250;</label>
+              </div>
+              <div class="slide">
+                <article class="membro">
+                <img src="img/diretoria_diretor_edinho.webp" alt="Edinho, diretor da ARPA-RP" loading="lazy" />
+                <div class="membro-texto">
+                  <h3>Edinho</h3>
+                  <p>DIRETOR</p>
+                </div>
+                </article>
+                <label class="seta seta-esq" for="diretoria-2" aria-label="Anterior">&#8249;</label>
+                <label class="seta seta-dir" for="diretoria-4" aria-label="Próximo">&#8250;</label>
+              </div>
+              <div class="slide">
+                <article class="membro">
+                <img src="img/diretoria_filmmaker_gabriel.webp" alt="Gabriel, filmmaker da ARPA-RP" loading="lazy" />
+                <div class="membro-texto">
+                  <h3>Gabriel</h3>
+                  <p>FILMMAKER</p>
+                </div>
+                </article>
+                <label class="seta seta-esq" for="diretoria-3" aria-label="Anterior">&#8249;</label>
+                <label class="seta seta-dir" for="diretoria-5" aria-label="Próximo">&#8250;</label>
+              </div>
+              <div class="slide">
+                <article class="membro">
+                <img src="img/diretoria_filmmaker_lucas.webp" alt="Lucas, filmmaker da ARPA-RP" loading="lazy" />
+                <div class="membro-texto">
+                  <h3>Lucas</h3>
+                  <p>FILMMAKER</p>
+                </div>
+                </article>
+                <label class="seta seta-esq" for="diretoria-4" aria-label="Anterior">&#8249;</label>
+                <label class="seta seta-dir" for="diretoria-1" aria-label="Próximo">&#8250;</label>
+              </div>
             </div>
-          </article>
-          <article class="membro">
-            <img src="img/diretoria_diretor_cleber.webp" alt="Cleber, diretor da ARPA-RP" loading="lazy" />
-            <div class="membro-texto">
-              <h3>Cleber</h3>
-              <p>DIRETOR</p>
-            </div>
-          </article>
-          <article class="membro">
-            <img src="img/diretoria_diretor_edinho.webp" alt="Edinho, diretor da ARPA-RP" loading="lazy" />
-            <div class="membro-texto">
-              <h3>Edinho</h3>
-              <p>DIRETOR</p>
-            </div>
-          </article>
-          <article class="membro">
-            <img src="img/diretoria_filmmaker_gabriel.webp" alt="Gabriel, filmmaker da ARPA-RP" loading="lazy" />
-            <div class="membro-texto">
-              <h3>Gabriel</h3>
-              <p>FILMMAKER</p>
-            </div>
-          </article>
-          <article class="membro">
-            <img src="img/diretoria_filmmaker_lucas.webp" alt="Lucas, filmmaker da ARPA-RP" loading="lazy" />
-            <div class="membro-texto">
-              <h3>Lucas</h3>
-              <p>FILMMAKER</p>
-            </div>
-          </article>
+          </div>
+          <div class="pontos">
+            <label for="diretoria-1" aria-label="Ir para o item 1"></label>
+            <label for="diretoria-2" aria-label="Ir para o item 2"></label>
+            <label for="diretoria-3" aria-label="Ir para o item 3"></label>
+            <label for="diretoria-4" aria-label="Ir para o item 4"></label>
+            <label for="diretoria-5" aria-label="Ir para o item 5"></label>
+          </div>
         </div>
       </div>
     </section>
@@ -310,7 +340,7 @@
         </p>
         <p class="endereco">Um espaço para descobrir a força do seu movimento.</p>
         <div class="moldura-mapa">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d953.5751790756021!2d-49.39943237824885!3d-20.785696097615784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bdadb3f06dd481%3A0x26c5be72dbd60315!2sARPA%20-%20Associa%C3%A7%C3%A3o%20Riopretense%20Pr%C3%B3%20Atletismo%20Cbat!5e1!3m2!1spt-BR!2sbr!4v1793878422348!5m2!1spt-BR!2sbr" title="Mapa do Centro Esportivo do Eldorado" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!4v1794437292849!6m8!1m7!1sqsPSdL8BQTktlweswlVt3Q!2m2!1d-20.78606334865074!2d-49.39975207491702!3f42.84355793179989!4f-8.03021691780674!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
       </div>
     </section>
