@@ -1,42 +1,57 @@
+/* ===== LEGENDA DOS VALORES =====
+   px: pixels (tamanho fixo)
+   %: porcentagem do elemento pai
+   vw: porcentagem da largura da tela (100vw = tela inteira)
+   #081a5e: cor em hexadecimal
+   rgba(r, g, b, a): cor com transparência (a vai de 0 a 1)
+   calc(): faz contas, ex.: calc(100% - 40px)
+   min() / max(): usa o menor / o maior valor
+   clamp(mín, ideal, máx): tamanho que acompanha a tela, sem passar dos limites
+   linear-gradient / radial-gradient: degradê reto / circular
+   s: segundos (duração das animações)
+   ================================ */
+
 /* Importando as fontes do Google Fonts: 'Barlow Condensed' para o título principal e 'Inter' para o restante dos textos */
+/* @import: traz as fontes do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Inter:wght@400;500;600;700&display=swap');
 
 /* Reset global: remove margens e preenchimentos padrão do navegador e garante que bordas/paddings não aumentem o tamanho final do elemento */
+/* *: seleciona todos os elementos da página */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* espaço por fora do elemento */
+    padding: 0; /* espaço por dentro do elemento */
+    box-sizing: border-box; /* border-box: padding e borda contam dentro da largura */
 }
 
 /* Rolagem suave ao clicar no menu. O scroll-padding-top desconta a altura do cabeçalho fixo, para ele não cobrir o título da seção */
 html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 95px;
+    scroll-behavior: smooth; /* rolagem suave ao clicar nos links do menu */
+    scroll-padding-top: 95px; /* desconta o cabeçalho fixo ao rolar até uma seção */
 }
 
 /* Configurações base do corpo da página: define a fonte padrão, fundo branco e a cor principal do texto */
 body {
-    font-family: 'Inter', sans-serif;
-    background: #ffffff;
-    color: #242c4a;
+    font-family: 'Inter', sans-serif; /* tipo de letra (fonte) */
+    background: #ffffff; /* fundo: cor, gradiente ou imagem */
+    color: #242c4a; /* cor do texto */
 }
 
 /* --- CABEÇALHO --- */
 
 /* Barra de navegação superior: largura total, altura fixa, fundo branco e alinha a logo de um lado e o menu do outro (space-between) */
 .header {
-    width: 100%;
-    height: 95px;
+    width: 100%; /* largura */
+    height: 95px; /* altura */
     background: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex; /* como o elemento se organiza: flex, grid, block, none (esconde)… */
+    align-items: center; /* alinha os itens na vertical (no flex) */
+    justify-content: space-between; /* distribui os itens na horizontal (no flex) */
     padding: 0 max(40px, calc((100% - 1160px) / 2));
     /* Mantém o cabeçalho visível no topo durante a rolagem */
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    box-shadow: 0 4px 22px rgba(6, 28, 92, 0.07);
+    position: sticky; /* forma de posicionar: relative, absolute, sticky… */
+    top: 0; /* distância do topo */
+    z-index: 10; /* ordem de camadas: número maior fica por cima */
+    box-shadow: 0 4px 22px rgba(6, 28, 92, 0.07); /* sombra em volta do elemento */
 }
 
 /* --- LOGO --- */
@@ -45,23 +60,23 @@ body {
 .logoimg {
     display: flex;
     align-items: center;
-    gap: 12px;
-    text-decoration: none;
+    gap: 12px; /* espaço entre os itens do flex ou grid */
+    text-decoration: none; /* none tira o sublinhado dos links */
 }
 
 /* Define dimensões fixas para a imagem da logo, evitando distorções */
 .logo {
     width: 44px;
     height: 44px;
-    object-fit: contain;
+    object-fit: contain; /* cover preenche sem distorcer; contain mostra a imagem inteira */
 }
 
 /* Estilo do texto da logo: define cor azul escura e deixa em negrito */
 .logoimg span {
     color: #1a2c5e;
-    font-size: 15px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
+    font-size: 15px; /* tamanho da letra */
+    font-weight: 800; /* grossura da letra (400 normal, 700 negrito) */
+    letter-spacing: 0.5px; /* espaço entre as letras */
 }
 
 /* --- MENU DE NAVEGAÇÃO --- */
@@ -75,7 +90,7 @@ body {
 
 /* Remove a marcação padrão de lista dos links de navegação */
 .sub-items li {
-    list-style: none;
+    list-style: none; /* none tira as bolinhas da lista */
 }
 
 /* Estilos dos links do menu: fonte menor, cor acinzentada, espaçamento entre letras e transição de cor suave */
@@ -85,10 +100,11 @@ body {
     font-weight: 700;
     color: #555f79;
     letter-spacing: 1px;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease; /* animação suave quando algo muda (ex.: no hover) */
 }
 
 /* Muda a cor do link para azul vibrante quando o mouse passa por cima */
+/* ":hover": estilo quando o mouse passa por cima */
 .sub-items a:hover {
     color: #1a3ad6;
 }
@@ -101,13 +117,13 @@ body {
     background: #112d8a;
     color: #ffffff !important;
     padding: 13px 22px;
-    border-radius: 4px;
+    border-radius: 4px; /* arredonda os cantos */
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1px;
     text-decoration: none;
-    border: none;
-    cursor: pointer;
+    border: none; /* borda: espessura, estilo e cor */
+    cursor: pointer; /* pointer mostra a mãozinha ao passar o mouse */
     transition: background 0.2s ease;
 }
 
@@ -121,21 +137,22 @@ body {
 /* Área principal: ocupa o restante da altura da tela, aplica um gradiente azul bem escuro (navy) e corta elementos que vazarem */
 .container {
     width: 100%;
-    min-height: calc(100vh - 95px);
+    min-height: calc(100vh - 95px); /* altura mínima */
     background: radial-gradient(circle at 85% 50%, #0d2987 0%, #081a5e 50%, #05103a 100%);
     color: #ffffff;
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* hidden esconde o que passa da caixa */
 }
 
 /* EFEITO DE CÍRCULOS CONCÊNTRICOS NO FUNDO (DIREITA) */
 /* Usa um pseudo-elemento (::after) para desenhar linhas finas (1px) criando os aros do lado direito */
+/* "::after": cria um elemento extra só pelo CSS (aqui, os círculos do fundo) */
 .container::after {
-    content: "";
+    content: ""; /* conteúdo criado pelo CSS (obrigatório no ::after) */
     position: absolute;
-    right: -100px;
+    right: -100px; /* distância da direita */
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%); /* move, gira ou aumenta o elemento sem empurrar os outros */
     width: 700px;
     height: 700px;
     /* Primeira linha fina do círculo interno */
@@ -145,6 +162,7 @@ body {
     box-shadow: 
         0 0 0 180px transparent, 
         0 0 0 181px rgba(255, 255, 255, 0.05);
+    /* pointer-events: none deixa o clique passar através */
     pointer-events: none; /* Garante que o efeito de fundo não bloqueie cliques no texto */
 }
 
@@ -152,12 +170,12 @@ body {
 
 /* Organiza os textos dentro do banner: centraliza com limite máximo de largura, organiza em coluna e joga elementos pra cima (z-index) */
 .hero-content {
-    max-width: 1160px;
+    max-width: 1160px; /* largura máxima */
     min-height: calc(100vh - 95px);
     margin: 0 auto;
     padding: 70px 20px 45px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* column empilha os itens um embaixo do outro */
     position: relative;
     z-index: 2;
 }
@@ -170,7 +188,7 @@ body {
     font-weight: 700;
     letter-spacing: 2.5px;
     color: #9cb5ff;
-    margin-bottom: 24px;
+    margin-bottom: 24px; /* espaço por fora, embaixo */
 }
 
 /* Título principal gigante: usa a fonte Condensed, altura de linha reduzida (junta as linhas) e letras grandes */
@@ -178,7 +196,7 @@ body {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 92px;
     font-weight: 900;
-    line-height: 0.88;
+    line-height: 0.88; /* altura da linha (espaço entre linhas) */
     letter-spacing: -0.5px;
     margin-bottom: 35px;
     color: #ffffff;
@@ -203,7 +221,7 @@ body {
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-top: auto;
+    margin-top: auto; /* espaço por fora, em cima */
     color: #b0c6ff;
     font-size: 10px;
     font-weight: 700;
@@ -240,7 +258,7 @@ body {
     max-width: 450px;
     border-radius: 4px;
     overflow: hidden;
-    flex-shrink: 0;
+    flex-shrink: 0; /* 0 impede o elemento de encolher */
 }
 
 /* Imagem dos professores */
@@ -254,10 +272,10 @@ body {
 /* Faixa azul flutuante sobre a imagem */
 .faixa-azul {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 0; /* distância de baixo */
+    left: 0; /* distância da esquerda */
     width: 100%;
-    background-color: rgba(6, 26, 63, 0.95);
+    background-color: rgba(6, 26, 63, 0.95); /* cor de fundo */
     padding: 22px 24px;
     box-sizing: border-box;
 }
@@ -275,13 +293,14 @@ body {
     margin: 0;
     font-weight: 700;
     letter-spacing: 1px;
-    text-transform: uppercase;
+    text-transform: uppercase; /* uppercase deixa em letras maiúsculas */
 }
 
 /* Lado direito: Textos descritivos */
 .professor-conteudo {
     display: flex;
     flex-direction: column;
+    /* min-width: largura mínima */
     min-width: 0; /* deixa o texto encolher em vez de passar da tela */
 }
 
@@ -318,11 +337,12 @@ body {
 /* Grid de informações na parte inferior (Gratuito, Dias, Horário, Idade) */
 .info-grid {
     display: flex;
+    /* flex-wrap: wrap deixa os itens descerem de linha */
     flex-wrap: wrap; /* os itens descem de linha se faltar espaço */
     gap: 24px 40px;
     margin-top: 20px;
-    border-top: 1px solid #eaeef5;
-    padding-top: 24px;
+    border-top: 1px solid #eaeef5; /* borda só em cima */
+    padding-top: 24px; /* espaço por dentro, em cima */
 }
 
 /* Título de cada rodapé ocupa a linha inteira */
@@ -405,13 +425,13 @@ body {
     font-size: 12px;
     line-height: 1.7;
     color: #687b9f;
-    text-align: right;
+    text-align: right; /* alinhamento do texto */
 }
 
 /* Grid: três colunas de mesma largura para os cards */
 .grade-novidades {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* quantas colunas o grid tem e o tamanho de cada uma */
     gap: 22px;
 }
 
@@ -429,7 +449,7 @@ body {
 
 /* overflow: hidden corta a imagem quando ela aumenta no hover */
 .card-imagem {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 9; /* proporção fixa (16 / 9, 3 / 4…) */
     overflow: hidden;
 }
 
@@ -512,7 +532,7 @@ body {
 }
 
 .card-destaque .card-imagem img {
-    object-position: top;
+    object-position: top; /* qual parte da imagem fica visível */
 }
 
 .card-destaque .card-texto {
@@ -586,7 +606,7 @@ body {
     position: absolute;
     width: 1px;
     height: 1px;
-    opacity: 0;
+    opacity: 0; /* transparência (0 invisível, 1 normal) */
 }
 
 /* A janela mostra um item por vez e esconde o resto */
@@ -603,11 +623,14 @@ body {
 
 /* Cada item ocupa 100% da janela */
 .slide {
-    flex: 0 0 100%;
+    flex: 0 0 100%; /* tamanho do item no flex (0 0 100% = ocupa 100% e não cresce nem encolhe) */
     position: relative;
 }
 
 /* Para cada radio marcado, o trilho anda 100% vezes a posição dele (até 10 itens) */
+/* ":checked": quando o checkbox ou radio está marcado */
+/* "~": qualquer elemento depois, no mesmo nível */
+/* ":nth-of-type(n)": o n-ésimo elemento daquele tipo (aqui, o n-ésimo radio) */
 .slide-radio:nth-of-type(2):checked ~ .slides-janela .slides-trilho {
     transform: translateX(-100%);
 }
@@ -662,7 +685,7 @@ body {
     cursor: pointer;
     box-shadow: 0 4px 14px rgba(6, 28, 92, 0.25);
     transition: background 0.2s ease, color 0.2s ease;
-    user-select: none;
+    user-select: none; /* none impede selecionar o texto */
 }
 
 .seta:hover {
@@ -694,6 +717,7 @@ body {
     cursor: pointer;
 }
 
+/* ":nth-child(n)": o n-ésimo filho (1º, 2º, 3º…) */
 .slide-radio:nth-of-type(1):checked ~ .pontos label:nth-child(1),
 .slide-radio:nth-of-type(2):checked ~ .pontos label:nth-child(2),
 .slide-radio:nth-of-type(3):checked ~ .pontos label:nth-child(3),
@@ -708,9 +732,10 @@ body {
 }
 
 /* Contorno quando o carrossel é usado pelo teclado */
+/* ":focus-visible": quando o elemento é alcançado pelo teclado */
 .slide-radio:focus-visible ~ .slides-janela {
-    outline: 2px solid #1a3ad6;
-    outline-offset: 4px;
+    outline: 2px solid #1a3ad6; /* contorno de foco, usado por quem navega pelo teclado */
+    outline-offset: 4px; /* distância do contorno até o elemento */
 }
 
 /* Diretoria: um card estreito e centralizado */
@@ -747,7 +772,7 @@ body {
 }
 
 .titulo-apoiadores {
-    margin-left: max(20px, calc((100vw - 1160px) / 2));
+    margin-left: max(20px, calc((100vw - 1160px) / 2)); /* espaço por fora, à esquerda */
 }
 
 .titulo-apoiadores .titulo-secao {
@@ -768,12 +793,12 @@ body {
 .faixa-trilho {
     display: flex;
     width: max-content;
-    animation: rolar 30s linear infinite;
+    animation: rolar 30s linear infinite; /* liga uma animação @keyframes: nome, duração e repetição */
 }
 
 /* Pausa a animação quando o mouse está sobre a faixa */
 .faixa:hover .faixa-trilho {
-    animation-play-state: paused;
+    animation-play-state: paused; /* paused pausa a animação */
 }
 
 .faixa-grupo {
@@ -785,11 +810,11 @@ body {
     display: flex;
     align-items: center;
     gap: 14px;
-    padding-right: 60px;
+    padding-right: 60px; /* espaço por dentro, à direita */
     font-size: 17px;
     font-weight: 700;
     color: #081a5e;
-    white-space: nowrap;
+    white-space: nowrap; /* nowrap impede o texto de quebrar linha */
 }
 
 /* Círculo com a inicial do apoiador */
@@ -808,6 +833,7 @@ body {
 }
 
 /* A faixa anda metade do trilho, ou seja, exatamente uma lista, e recomeça */
+/* @keyframes: define os passos de uma animação (de "from" até "to") */
 @keyframes rolar {
     from {
         transform: translateX(0);
@@ -1063,7 +1089,7 @@ a.card-imagem {
 
 /* Listas com marcador azul */
 .pagina-texto ul {
-    padding-left: 22px;
+    padding-left: 22px; /* espaço por dentro, à esquerda */
     margin-bottom: 18px;
 }
 
@@ -1074,6 +1100,7 @@ a.card-imagem {
     margin-bottom: 8px;
 }
 
+/* "::marker": a bolinha da lista */
 .pagina-texto li::marker {
     color: #1a3ad6;
 }
@@ -1137,6 +1164,7 @@ a.card-imagem {
 /* --- ACESSIBILIDADE --- */
 
 /* Para quem configurou o sistema com menos movimento: para a faixa e permite rolar para o lado */
+/* @media prefers-reduced-motion: para quem pediu menos animação no sistema */
 @media (prefers-reduced-motion: reduce) {
     .slides-trilho {
         transition: none;
@@ -1147,7 +1175,7 @@ a.card-imagem {
     }
 
     .faixa {
-        overflow-x: auto;
+        overflow-x: auto; /* auto permite rolar para o lado */
     }
 
     .faixa-trilho {
@@ -1158,6 +1186,7 @@ a.card-imagem {
 /* --- VERSÃO PARA TABLET E CELULAR --- */
 
 /* Estas regras só valem em telas de até 800px e sobrescrevem as anteriores */
+/* @media (max-width: 800px): regras que só valem em telas de até 800px (celular e tablet) */
 @media (max-width: 800px) {
     /* O menu ocupa mais de uma linha, então o cabeçalho deixa de ser fixo */
     html {
@@ -1226,6 +1255,7 @@ a.card-imagem {
     }
 
     /* Contorno quando o botão é alcançado pelo teclado */
+    /* "+": o elemento logo depois, no mesmo nível */
     .menu-check:focus-visible + .menu-botao {
         outline: 2px solid #ffffff;
     }
@@ -1254,6 +1284,7 @@ a.card-imagem {
         list-style: none;
     }
 
+    /* ":not(...)": seleciona tudo, menos o que está entre parênteses */
     .menu-celular a:not(.button) {
         display: block;
         padding: 14px 0;
@@ -1308,7 +1339,7 @@ a.card-imagem {
 
     /* Informações em duas colunas */
     .info-titulo {
-        grid-column: 1 / -1;
+        grid-column: 1 / -1; /* 1 / -1 ocupa todas as colunas do grid */
     }
 
     .info-grid {

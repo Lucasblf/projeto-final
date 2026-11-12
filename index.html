@@ -1,31 +1,41 @@
 <!doctype html>
-<!-- Linguagem -->
+<!-- doctype (linha acima): avisa o navegador que é uma página HTML5 -->
+<!-- html: começo da página; lang="pt-BR" informa que o idioma é português -->
 <html lang="pt-BR">
+  <!-- head: configurações da página, não aparecem na tela -->
   <head>
-    <!--Configurações básicas-->
 
+    <!-- meta charset: permite acentos e ç -->
     <meta charset="UTF-8" />
+    <!-- meta viewport: ajusta a página à largura do celular -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Titulo e Descrição SEO -->
+    <!-- title: nome que aparece na aba do navegador e no Google -->
     <title>ARPA-RP | Associação Riopretense Pró Atletismo</title>
+    <!-- meta description: resumo do site que aparece no Google -->
     <meta
       name="description"
       content="Conheça a ARPA-RP, Associação Riopretense Pró Atletismo. 
     Acompanhe nossos projetos, novidades e iniciativas de incentivo ao atletismo em Rio Preto."
     />
+    <!-- link icon: ícone (favicon) da aba do navegador -->
     <link rel="icon" type="image/webp" href="img/logo_sem_fundo.webp" />
+    <!-- link stylesheet: liga o HTML ao arquivo de estilo style.css -->
     <link rel="stylesheet" href="style.css" />
   </head>
+  <!-- body: tudo o que aparece na tela fica aqui dentro -->
   <body>
     <!-- Inicio do Header-->
+    <!-- header: cabeçalho com logo e menu (no celular ele some e entra o menu hambúrguer) -->
     <header class="header">
+      <!-- a: link; href="#inicio" volta ao topo da página -->
       <a class="logoimg" href="#inicio">
+        <!-- img: imagem; src é o arquivo e alt é a descrição para leitores de tela -->
         <img class="logo" alt="Logo ARPA-RP" src="img/logo_sem_fundo.webp" />
         <span>ARPA-RP</span>
       </a>
 
-      <!-- Menu: cada link aponta para o id de uma seção da página -->
+      <!-- nav: área de navegação. ul é uma lista, li é cada item e href="#id" leva até a seção com aquele id -->
       <nav>
         <ul class="sub-items">
           <li><a href="#projeto">PROJETO</a></li>
@@ -39,17 +49,22 @@
     <!-- fim do Header-->
 
     <!-- inicio seção principal -->
+    <!-- section: um bloco da página. class liga ao CSS e id permite chegar aqui pelo menu -->
     <section class="container" id="inicio">
       <div class="hero-content">
+        <!-- div: caixa usada para agrupar e organizar elementos -->
         <div class="topo-menu">
+          <!-- p: parágrafo de texto -->
           <p class="localizacao">SÃO JOSÉ DO RIO PRETO · SP</p>
-          <!-- Menu do celular: o checkbox guarda o estado aberto/fechado e o CSS mostra a lista -->
+          <!-- Menu hambúrguer: o input checkbox guarda se o menu está aberto ou fechado -->
           <input class="menu-check" type="checkbox" id="menu-abrir" aria-label="Abrir menu" />
+          <!-- label: o botão de 3 barrinhas. Clicar nele marca/desmarca o checkbox (for = id do input) -->
           <label class="menu-botao" for="menu-abrir">
             <span></span>
             <span></span>
             <span></span>
           </label>
+          <!-- Lista do menu do celular: o CSS só mostra quando o checkbox está marcado -->
           <nav class="menu-celular" aria-label="Menu principal">
             <ul>
               <li><a href="#projeto">PROJETO</a></li>
@@ -61,6 +76,7 @@
           </nav>
         </div>
 
+        <!-- h1: título principal da página. br quebra a linha e span pinta só uma parte do texto -->
         <h1>MOVIMENTO QUE<br /><span class="destaque-claro">TRANSFORMA</span></h1>
 
         <p class="descricao">
@@ -72,17 +88,19 @@
     <!-- fim seção principal -->
 
     <!-- segunda seção professor -->
+    <!-- Seção Projeto: foto à esquerda e informações à direita (flexbox no CSS) -->
     <section class="secao-professor" id="projeto">
       <div class="professor-wrapper">
         
-        <!-- Coluna da Esquerda: Foto + Faixa Azul Flutuante -->
+        <!-- Coluna da esquerda: foto -->
         <div class="container-professor">
           <img class="imagem-professor" alt="Grupo de crianças e adolescentes da ARPA-RP reunidos na pista de atletismo" src="img/criancas.webp">
         </div>
 
-        <!-- Coluna da Direita: Textos explicativos e detalhes -->
+        <!-- Coluna da direita: textos e informações -->
         <div class="professor-conteudo">
           <p class="subtitulo-iniciacao">PROJETO DE INICIAÇÃO</p>
+          <!-- h2: título de seção (abaixo do h1 em importância) -->
           <h2>O PRIMEIRO PASSO <span class="destaque">COMEÇA AQUI</span></h2>
           <p class="texto-principal">
             O projeto da ARPA-RP abre as portas do atletismo para crianças a partir de 5 anos e adolescentes. Com aulas lúdicas, acompanhamento próximo e muita energia, cada treino transforma movimento em confiança.
@@ -92,6 +110,7 @@
           </p>
 
           <!-- Rodapé de informações (Gratuito, Dias, Horário, Idade) -->
+          <!-- Informações das crianças: cada info-item tem um valor (em cima) e um rótulo (embaixo) -->
           <div class="info-grid">
             <span class="info-titulo">CRIANÇAS</span>
             <div class="info-item">
@@ -139,6 +158,7 @@
     <!-- fim seção professor -->
 
     <!-- inicio seção novidades -->
+    <!-- Seção Novidades: cards em grid de 3 colunas (no celular vira 1) -->
     <section class="secao-novidades" id="novidades">
       <div class="conteudo-central">
         <div class="titulo-novidades">
@@ -150,14 +170,18 @@
         </div>
 
         <div class="grade-novidades">
+          <!-- article: um conteúdo independente, aqui cada card de notícia. Foto, título e seta levam à página da novidade -->
           <article class="card-novidade">
             <a class="card-imagem" href="Festa_do_Dia_das_Criancas.html">
+              <!-- loading="lazy": a imagem só carrega quando chega perto da tela, deixando o site mais rápido -->
               <img src="img/brinquedo.webp" alt="Crianças brincando em um tobogã inflável na pista de atletismo" loading="lazy" />
             </a>
             <div class="card-texto">
               <p class="card-etiqueta">23 DE OUTUBRO</p>
+              <!-- h3: subtítulo do card; o link leva para outra página .html -->
               <h3><a href="Festa_do_Dia_das_Criancas.html">Festa do Dia das Crianças</a></h3>
               <p class="card-descricao">Um dia especial para celebrar a alegria, a amizade e cada pequena grande conquista dos nossos atletas.</p>
+              <!-- aria-label: descreve o link para quem usa leitor de tela -->
               <a class="card-seta" href="Festa_do_Dia_das_Criancas.html" aria-label="Ver a página Festa do Dia das Crianças">↗</a>
             </div>
           </article>
@@ -187,6 +211,7 @@
 
         <!-- Destaques: card com foto ao lado do texto -->
         <h2 class="titulo-secao titulo-destaques">DESTAQUES</h2>
+        <!-- Card de destaque: duas classes, a segunda deixa a foto ao lado do texto -->
         <article class="card-novidade card-destaque">
           <div class="card-imagem">
             <img src="img/jeovany_bronze_1500.png" alt="Jeovane da Rocha mostrando a medalha de bronze, com a camiseta da ARPA-RP" loading="lazy" />
@@ -205,20 +230,23 @@
     <!-- fim seção novidades -->
 
     <!-- inicio seção diretoria -->
+    <!-- Seção Diretoria: carrossel com setas feito só com HTML e CSS -->
     <section class="secao-diretoria" id="diretoria">
       <div class="conteudo-central">
         <p class="subtitulo-secao">QUEM FAZ ACONTECER</p>
         <h2 class="titulo-secao">DIRETORIA <span class="destaque">E EQUIPE</span></h2>
        
 
-        <!-- Carrossel só com CSS: cada "radio" guarda qual item está aparecendo e as setas são labels que marcam o radio anterior ou o próximo -->
         <div class="carrossel-setas carrossel-diretoria">
+          <!-- input radio: só um pode estar marcado por vez; cada um representa uma pessoa. O CSS move o trilho conforme o radio marcado -->
           <input class="slide-radio" type="radio" name="diretoria" id="diretoria-1" checked aria-label="Mostrar item 1 de 5" />
           <input class="slide-radio" type="radio" name="diretoria" id="diretoria-2" aria-label="Mostrar item 2 de 5" />
           <input class="slide-radio" type="radio" name="diretoria" id="diretoria-3" aria-label="Mostrar item 3 de 5" />
           <input class="slide-radio" type="radio" name="diretoria" id="diretoria-4" aria-label="Mostrar item 4 de 5" />
           <input class="slide-radio" type="radio" name="diretoria" id="diretoria-5" aria-label="Mostrar item 5 de 5" />
+          <!-- janela: mostra 1 pessoa por vez e esconde o resto (overflow: hidden) -->
           <div class="slides-janela">
+            <!-- trilho: todos os slides lado a lado; ele anda para a esquerda com transform -->
             <div class="slides-trilho">
               <div class="slide">
                 <article class="membro">
@@ -228,6 +256,7 @@
                   <p>COORDENADOR E TREINADOR</p>
                 </div>
                 </article>
+                <!-- setas: labels que marcam o radio anterior (for) ou o próximo; ‹ e › são os desenhos das setas -->
                 <label class="seta seta-esq" for="diretoria-5" aria-label="Anterior">&#8249;</label>
                 <label class="seta seta-dir" for="diretoria-2" aria-label="Próximo">&#8250;</label>
               </div>
@@ -277,6 +306,7 @@
               </div>
             </div>
           </div>
+          <!-- bolinhas: cada label marca um radio e mostra em qual pessoa está -->
           <div class="pontos">
             <label for="diretoria-1" aria-label="Ir para o item 1"></label>
             <label for="diretoria-2" aria-label="Ir para o item 2"></label>
@@ -290,13 +320,14 @@
     <!-- fim seção diretoria -->
 
     <!-- inicio seção patrocinadores -->
+    <!-- Seção Patrocinadores: faixa que anda sozinha com @keyframes no CSS -->
     <section class="secao-apoiadores" id="patrocinadores">
       <div class="titulo-apoiadores">
         <p class="subtitulo-secao">QUEM CAMINHA COM A GENTE</p>
         <h2 class="titulo-secao">PATROCINADORES <span class="destaque">E APOIADORES</span></h2>
       </div>
 
-      <!-- A lista aparece duas vezes: ao andar 50%, a segunda cópia ocupa o lugar da primeira -->
+      <!-- A lista aparece duas vezes: quando anda 50%, a segunda cópia ocupa o lugar da primeira e a animação recomeça sem salto -->
       <div class="faixa">
         <div class="faixa-trilho">
           <div class="faixa-grupo">
@@ -311,6 +342,7 @@
             <div class="apoiador"><span class="apoiador-letra">M</span>matheuslolii</div>
             <div class="apoiador"><span class="apoiador-letra">G</span>grupomacali</div>
           </div>
+          <!-- aria-hidden: o leitor de tela ignora a cópia para não ler os nomes duas vezes -->
           <div class="faixa-grupo" aria-hidden="true">
             <div class="apoiador"><span class="apoiador-letra">A</span>arcomarrp</div>
             <div class="apoiador"><span class="apoiador-letra">R</span>reativamove</div>
@@ -329,6 +361,7 @@
     <!-- fim seção patrocinadores -->
 
     <!-- inicio seção mapa -->
+    <!-- Seção Mapa -->
     <section class="secao-mapa" id="mapa">
       <div class="conteudo-central">
         <p class="subtitulo-secao">VENHA NOS VISITAR</p>
@@ -340,6 +373,7 @@
         </p>
         <p class="endereco">Um espaço para descobrir a força do seu movimento.</p>
         <div class="moldura-mapa">
+          <!-- iframe: mostra outra página dentro desta, aqui o mapa do Google Maps -->
           <iframe src="https://www.google.com/maps/embed?pb=!4v1794437292849!6m8!1m7!1sqsPSdL8BQTktlweswlVt3Q!2m2!1d-20.78606334865074!2d-49.39975207491702!3f42.84355793179989!4f-8.03021691780674!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
       </div>
@@ -347,6 +381,7 @@
     <!-- fim seção mapa -->
 
     <!-- inicio seção inscrição -->
+    <!-- Seção Inscrição -->
     <section class="secao-inscricao" id="inscricao">
       <div class="conteudo-central inscricao-conteudo">
         <div>
@@ -354,12 +389,14 @@
           <h2 class="titulo-secao">GOSTARIA DE SE INSCREVER?</h2>
           <p class="inscricao-texto">Chame no nosso WhatsApp e venha fazer parte da ARPA-RP.</p>
         </div>
+        <!-- Link do WhatsApp (wa.me); target="_blank" abre em nova aba e rel="noopener" deixa isso mais seguro -->
         <a class="botao-whatsapp" href="https://wa.me/5517996532933?text=Quero%20me%20inscrever" target="_blank" rel="noopener">FALAR NO WHATSAPP ↗</a>
       </div>
     </section>
     <!-- fim seção inscrição -->
 
     <!-- inicio rodapé -->
+    <!-- footer: rodapé da página -->
     <footer class="rodape">
       <!-- Créditos do projeto acadêmico -->
       <div class="conteudo-central rodape-credito">
@@ -372,6 +409,7 @@
             Informática para Negócios, São José do Rio Preto.
           </p>
           <div class="credito-integrantes">
+            <!-- Cada link leva ao Instagram de um integrante; alt="" porque o ícone é só decorativo -->
             <a class="link-instagram" href="https://www.instagram.com/lucasblf_/" target="_blank" rel="noopener">
               <img src="img/instagram.png" alt="" loading="lazy" />
               @lucasblf_
@@ -389,6 +427,7 @@
       </div>
     </footer>
     <!-- fim rodapé -->
+  <!-- fim do body e do html: tudo precisa ser fechado com a tag de fechamento (/) -->
   </body>
 </html>
 
